@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Create an account – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Enter your details
+      </h1>
+
+      <form class="form" action="/register/confirmation" method="post">
+
+        <p class="govuk-body">This will only be used to create an account to use the GP Surgery Services.</p>
+
+        <div class="govuk-form-group">
+          <p class="govuk-label">Create an username</p>
+
+          <div class="govuk-hint">This could be upto 15 alphanumeric characters.</div>
+
+          <input type="text" name="user_id" id="user_id" class="govuk-input govuk-!-width-three-quarters" value="" maxlength="22" aria-describedby="user_id-hint" autocomplete="username">
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="password" class="govuk-label">Create a password </label>
+
+          <div class="govuk-hint">This should be 8 to 16 alphanumeric characters and a <br>special character [# $ . _ ! @ &]</div>
+
+          <input type="password" name="password" id="password" class="govuk-input govuk-!-width-three-quarters" autocomplete="current-password"> 
+        </div>
+
+        <div class="govuk-form-group">
+          <label for="password" class="govuk-label">Confirm password</label>
+
+          <div class="govuk-hint">This should match with the field above.</div>
+
+          <input type="password" name="password" id="password" class="govuk-input govuk-!-width-three-quarters" autocomplete="current-password"> 
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Create an account</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
